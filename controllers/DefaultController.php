@@ -64,6 +64,14 @@ class DefaultController extends TicketsController {
             }
         }
 
+        if (isset($_POST['Tickets'])) {
+            $model->scenario   = 'state';
+            $model->attributes = $_POST['Tickets'];
+            if ($model->save()) {
+                $this->redirect(array('index'));
+            }
+        }
+
         $this->render('answer', array('model' => $model, 'answer' => $answer));
     }
 }

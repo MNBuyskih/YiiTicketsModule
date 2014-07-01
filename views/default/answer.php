@@ -28,6 +28,18 @@ foreach ($model->answers as $_answer) {
 ?>
 
 <div class="ticket-form">
+    <div class="pull-right text-right">
+        <?
+        $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', ['type' => 'horizontal']);
+        echo $form->dropDownListRow($model, 'state', Tickets::states());
+        ?>
+        <div>
+            <button class="btn btn-warning" type="submit">Изменить статус</button>
+        </div>
+        <?
+        $this->endWidget();
+        ?>
+    </div>
     <?
     $form = $this->beginWidget('bootstrap.widgets.TbActiveForm');
     echo $form->errorSummary($answer);

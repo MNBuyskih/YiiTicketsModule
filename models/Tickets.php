@@ -24,6 +24,10 @@ class Tickets extends TicketsBase {
         return parent::model($className);
     }
 
+    public function rules() {
+        return CMap::mergeArray(parent::rules(), array(array('state', 'in', 'range' => array_keys(self::states()))));
+    }
+
     public function attributeLabels() {
         return array(
             'id'          => 'Id',

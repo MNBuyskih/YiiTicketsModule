@@ -2,7 +2,7 @@ YiiTicketsModule
 ================
 Примерный конфиг в protected/config/main.php
 
-<code>
+<code><pre>
 'modules'    => array(
         // ...
         'tickets' => [
@@ -40,5 +40,5 @@ YiiTicketsModule
         ],
         // ...
     ),
-</code>
+<pre></code>
 Полное описание методов можно найти в TicketsModule.php

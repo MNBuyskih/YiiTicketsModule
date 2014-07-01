@@ -20,13 +20,11 @@ YiiTicketsModule
                     if ($ticket->user_id == $userId) {
                         return $userId;
                     }
-
                     // Определяем, что у авторизованного пользователя есть доступ для ответов в чужие тикеты
                     $superUsers = [2, 3, 4, 5, 6];
                     if (in_array($userId, $superUsers)) {
                         return $userId;
                     }
-
                     return $ticket->user_id; // false;
                 },
             'getUserName'     => function ($id) {
@@ -41,4 +39,6 @@ YiiTicketsModule
         // ...
     ),
 <pre></code>
+
+
 Полное описание методов можно найти в TicketsModule.php
